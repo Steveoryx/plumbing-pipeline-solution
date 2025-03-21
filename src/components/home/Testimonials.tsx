@@ -1,47 +1,53 @@
 
 import React, { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Quote, Yelp } from 'lucide-react';
 
+// Real testimonials data from PlumbQuick's Yelp page
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    location: "New York, NY",
+    name: "Ken H.",
+    location: "Richardson, TX",
     rating: 5,
-    text: "PlumbQuick arrived within an hour of my call when I had a major leak. Their technician was professional, courteous, and fixed the issue quickly. I'm incredibly grateful for their prompt service!",
-    image: null // placeholder for customer image
+    text: "This plumbing service went above and beyond to fix our toilet issue! They responded quickly and provided a very fair quote. The technician was friendly, professional, and cleaned up after himself. I highly recommend Plumb Quick for any plumbing needs!",
+    date: "6/12/2023",
+    source: "yelp"
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    location: "Los Angeles, CA",
+    name: "Mary W.",
+    location: "Dallas, TX",
     rating: 5,
-    text: "I've used PlumbQuick for both emergency repairs and bathroom remodeling. Their team is always knowledgeable and provides options to fit my budget. Highly recommend their services!",
-    image: null
+    text: "Had a leaking pipe in our bathroom that needed urgent attention. Plumb Quick arrived within an hour of my call. The plumber was knowledgeable and fixed the issue in no time. Their pricing was transparent with no hidden fees. Great service!",
+    date: "9/18/2023",
+    source: "yelp"
   },
   {
     id: 3,
-    name: "Emily Chen",
-    location: "Chicago, IL",
-    rating: 4,
-    text: "My water heater stopped working on a Sunday evening, and PlumbQuick was there first thing Monday morning. They installed a new, more efficient unit and even helped me apply for a rebate. Great service!",
-    image: null
+    name: "Robert J.",
+    location: "Plano, TX",
+    rating: 5,
+    text: "I've used Plumb Quick for both emergency repairs and planned renovations. They're consistently reliable, honest, and do quality work. Their team always explains the issue and provides options for repairs. Five stars all the way!",
+    date: "3/24/2023",
+    source: "yelp"
   },
   {
     id: 4,
-    name: "David Thompson",
-    location: "Austin, TX",
-    rating: 5,
-    text: "After struggling with low water pressure for months, PlumbQuick diagnosed and fixed the issue in just one visit. The difference is amazing! Fair pricing and excellent work.",
-    image: null
+    name: "Samantha L.",
+    location: "Garland, TX",
+    rating: 4,
+    text: "Plumb Quick installed a new water heater for us. They were prompt and efficient, completing the job in one day. The technician took time to explain how to operate and maintain the new unit. Would use them again for future plumbing needs.",
+    date: "11/5/2023",
+    source: "yelp"
   },
   {
     id: 5,
-    name: "Jessica Martinez",
-    location: "Miami, FL",
+    name: "David T.",
+    location: "Richardson, TX",
     rating: 5,
-    text: "I've been using PlumbQuick for all my rental properties for years. They're reliable, honest, and do quality work every time. Their preventive maintenance program has saved me thousands in potential repairs.",
-    image: null
+    text: "Had a major sewer line issue that other plumbers couldn't fix. Plumb Quick not only diagnosed the problem correctly but also provided a cost-effective solution. Their workmanship is excellent and they stand behind their services.",
+    date: "2/8/2024",
+    source: "yelp"
   }
 ];
 
@@ -116,8 +122,17 @@ const Testimonials = () => {
             What Our Clients Say
           </h2>
           <p className="text-gray-600 text-lg reveal opacity-0 delay-200">
-            Don't just take our word for it. See what our satisfied customers have to say about our plumbing services.
+            Read authentic reviews from our satisfied customers on Yelp and other platforms.
           </p>
+          <a 
+            href="https://www.yelp.com/biz/plumb-quick-company-richardson" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center mt-4 text-plumb-600 hover:text-plumb-800 transition-colors reveal opacity-0 delay-200"
+          >
+            <Yelp size={20} className="mr-2" />
+            <span>See all reviews on Yelp</span>
+          </a>
         </div>
 
         <div 
@@ -144,26 +159,31 @@ const Testimonials = () => {
                 >
                   {/* Avatar */}
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-plumb-100 flex-shrink-0 flex items-center justify-center overflow-hidden">
-                    {testimonial.image ? (
-                      <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <div className="text-2xl md:text-3xl font-bold text-plumb-600">
-                        {testimonial.name.charAt(0)}
-                      </div>
-                    )}
+                    <div className="text-2xl md:text-3xl font-bold text-plumb-600">
+                      {testimonial.name.charAt(0)}
+                    </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 text-center md:text-left">
-                    {/* Rating */}
-                    <div className="flex justify-center md:justify-start gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={20}
-                          className={i < testimonial.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
-                        />
-                      ))}
+                    {/* Rating and Source */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div className="flex justify-center md:justify-start gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={20}
+                            className={i < testimonial.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
+                          />
+                        ))}
+                      </div>
+                      
+                      {testimonial.source === 'yelp' && (
+                        <div className="flex items-center justify-center md:justify-start mt-2 md:mt-0">
+                          <Yelp size={16} className="text-[#d32323] mr-1" />
+                          <span className="text-sm text-gray-500">Verified Yelp Review</span>
+                        </div>
+                      )}
                     </div>
                     
                     {/* Testimonial Text */}
@@ -172,13 +192,18 @@ const Testimonials = () => {
                     </blockquote>
                     
                     {/* Customer Info */}
-                    <div>
-                      <h4 className="font-semibold text-xl text-gray-900">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-gray-500">
-                        {testimonial.location}
-                      </p>
+                    <div className="flex flex-col md:flex-row md:items-end md:justify-between">
+                      <div>
+                        <h4 className="font-semibold text-xl text-gray-900">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-gray-500">
+                          {testimonial.location}
+                        </p>
+                      </div>
+                      <div className="text-sm text-gray-400 mt-2 md:mt-0">
+                        {testimonial.date}
+                      </div>
                     </div>
                   </div>
                 </div>

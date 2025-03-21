@@ -8,6 +8,7 @@ import Testimonials from "@/components/home/Testimonials";
 import About from "@/components/home/About";
 import Emergency from "@/components/home/Emergency";
 import Booking from "@/components/home/Booking";
+import ReviewTable from "@/components/home/ReviewTable";
 
 const Index = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const Index = () => {
         <About />
         <Emergency />
         <Testimonials />
+        <ReviewTable />
         <Booking />
       </main>
       
