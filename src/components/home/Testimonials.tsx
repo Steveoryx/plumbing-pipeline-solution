@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, ExternalLink, Quote } from 'lucide-react';
 
 // Real testimonials data from PlumbQuick's Yelp page
 const testimonials = [
