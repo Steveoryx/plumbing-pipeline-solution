@@ -64,7 +64,7 @@ const Hero = () => {
                 </a>
                 
                 <a 
-                  href="tel:+1234567890" 
+                  href="tel:+19722128699" 
                   className="btn-secondary flex items-center justify-center gap-2"
                 >
                   <Phone size={18} />
@@ -97,15 +97,12 @@ const Hero = () => {
               {/* Main image container with blue gradient border */}
               <div className="rounded-2xl overflow-hidden border-8 border-gradient-to-r from-plumb-300 to-plumb-600 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
                 <div className="aspect-[4/3] w-full max-w-lg bg-plumb-100 flex items-center justify-center overflow-hidden">
-                  {/* Placeholder image - replace with actual plumber image */}
-                  <div className="w-full h-full bg-gradient-to-br from-plumb-100 to-plumb-200 flex items-center justify-center">
-                    <svg className="w-20 h-20 text-plumb-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zm-2 4a2 2 0 114 0 2 2 0 01-4 0z" clipRule="evenodd"></path>
-                      <path d="M10 14c-1.398 0-2.774.35-4 1.009V14a2 2 0 012-2h4a2 2 0 012 2v1.008c-1.226-.659-2.601-1.009-4-1.009z"></path>
-                      <path fillRule="evenodd" d="M10 16c1.658 0 3-1.015 3-2.268 0-.78-.145-1.498-.6-2.05-.365-.44-.821-.58-1.152-.621-.247-.032-.66-.06-1.248-.06s-1 .028-1.247.06c-.33.04-.787.182-1.158.62-.45.553-.594 1.271-.594 2.051 0 1.253 1.342 2.268 3 2.268z" clipRule="evenodd"></path>
-                    </svg>
-                    <span className="text-plumb-600 font-medium">Professional Plumber Image</span>
-                  </div>
+                  {/* Professional plumber stock image */}
+                  <img 
+                    src="https://images.unsplash.com/photo-1574482620826-40685ca5ebd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" 
+                    alt="Professional plumber fixing pipes" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               

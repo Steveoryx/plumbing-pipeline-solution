@@ -41,10 +41,12 @@ const About = () => {
               {/* Main image with stylized border */}
               <div className="rounded-2xl overflow-hidden border-8 border-white shadow-2xl relative z-10">
                 <div className="aspect-[3/4] w-full bg-plumb-100 flex items-center justify-center overflow-hidden">
-                  {/* Placeholder image - replace with actual team image */}
-                  <div className="w-full h-full bg-plumb-200 flex items-center justify-center">
-                    <span className="text-plumb-600 font-medium text-lg">Plumber Team Image</span>
-                  </div>
+                  {/* Professional plumber stock image */}
+                  <img 
+                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    alt="Professional plumber with tools" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
