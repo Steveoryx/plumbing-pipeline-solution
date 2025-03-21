@@ -1,6 +1,5 @@
-
-import React, { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote, Yelp } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
 
 // Real testimonials data from PlumbQuick's Yelp page
 const testimonials = [
@@ -130,7 +129,7 @@ const Testimonials = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center mt-4 text-plumb-600 hover:text-plumb-800 transition-colors reveal opacity-0 delay-200"
           >
-            <Yelp size={20} className="mr-2" />
+            <ExternalLink size={20} className="mr-2" />
             <span>See all reviews on Yelp</span>
           </a>
         </div>
@@ -180,7 +179,7 @@ const Testimonials = () => {
                       
                       {testimonial.source === 'yelp' && (
                         <div className="flex items-center justify-center md:justify-start mt-2 md:mt-0">
-                          <Yelp size={16} className="text-[#d32323] mr-1" />
+                          <ExternalLink size={16} className="text-[#d32323] mr-1" />
                           <span className="text-sm text-gray-500">Verified Yelp Review</span>
                         </div>
                       )}

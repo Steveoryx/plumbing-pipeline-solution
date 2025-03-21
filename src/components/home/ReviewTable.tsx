@@ -1,7 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Star, Yelp } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // More comprehensive review data from PlumbQuick's Yelp
@@ -151,7 +150,7 @@ const ReviewTable = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-[#d32323] hover:underline transition-colors"
             >
-              <Yelp size={20} className="mr-1" />
+              <ExternalLink size={20} className="mr-1" />
               <span>Yelp Reviews</span>
             </a>
             <span className="text-gray-300">|</span>
@@ -213,7 +212,7 @@ const ReviewTable = () => {
                             <TableCell className="hidden md:table-cell">
                               {review.source === 'yelp' && (
                                 <div className="flex items-center">
-                                  <Yelp size={16} className="text-[#d32323] mr-1" />
+                                  <ExternalLink size={16} className="text-[#d32323] mr-1" />
                                   <span>Yelp</span>
                                 </div>
                               )}
